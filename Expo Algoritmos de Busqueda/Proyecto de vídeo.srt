@@ -1,0 +1,320 @@
+1
+00:00:00,960 --> 00:00:11,520
+Hey, muy buenas a todos, guapísimos, hoy vamos a aprender sobre los algoritmos de búsqueda en inteligencia artificial y para ello pues usaremos nuestro ingenio dentro de minecraft.
+
+2
+00:00:12,640 --> 00:00:13,440
+Worales
+
+3
+00:00:13,440 --> 00:00:25,200
+¡Qué padrísimo! Es como lo que hemos visto en anteriores cursos dentro de nuestra querida ESCOM, en este caso nos referimos a búsqueda cómo encontrar el mejor camino, igual como cuando voy a buscar diamantes.
+
+4
+00:00:37,760 --> 00:00:38,560
+¿Diamantes?
+
+5
+00:00:38,560 --> 00:00:40,960
+¿Es lo que tiene que ver con la inteligencia artificial?
+
+6
+00:00:41,880 --> 00:00:58,320
+Demasiado De hecho, resolver problemas en IA es como buscar soluciones de Minecraft Necesitamos explorar una cueva o construir un camino De esta manera estamos aplicando una estrategia Necesitamos saber cómo movernos de donde estamos hasta donde queremos llegar Exacto
+
+7
+00:00:58,640 --> 00:01:04,959
+Y los problemas resueltos por medio de la búsqueda entre varias alternativas se basan en el sentido común humano, igual que nosotros.
+
+8
+00:01:05,239 --> 00:01:11,000
+La IA considera distintas estrategias o cursos de acción para llegar a la solución según el espacio del problema que enfrenta.
+
+9
+00:01:11,520 --> 00:01:20,080
+Muy bien, ahora para resolver un problema, el primer paso es formular un objetivo tomando en cuenta la situación actual y de acuerdo con lo que queremos lograr.
+
+10
+00:01:20,480 --> 00:01:25,960
+O sea, si estamos en la aldea y quiero llegar al portal del End y objetivos claro, llegar vivo hasta allá.
+
+11
+00:01:26,000 --> 00:01:34,280
+Así es, la tarea de la gente, o sea, nosotros o la IA, es encontrar la frecuencia de acciones que nos lleve desde el inicio hasta ese objetivo.
+
+12
+00:01:34,280 --> 00:01:40,720
+¿Y si voy caminando puede ser usando un caballo o construyendo un camino en el End para llegar más rápido?
+
+13
+00:01:41,039 --> 00:01:47,800
+Y esa decisión es parte de la formulación del problema, elegir qué estados y qué acciones se deben de considerar.
+
+14
+00:01:48,000 --> 00:02:05,640
+La IA lo hace explorando diferentes opciones, incluso aunque no sepa al inicio cuál será la mejor, examina las secuencias posibles, las compara y elige la más conveniente, como cuando te tomas un jugo de naranja y te cepillas los dientes, obvio te sabrá horrible, cosa que no pasaría si haces lo mismo, pero al revés.
+
+15
+00:02:07,200 --> 00:02:14,720
+Eso es lo que llamamos algoritmo de búsqueda, toma el problema como entrada y devuelve una solución en forma de pasos a seguir.
+
+16
+00:02:17,520 --> 00:02:25,760
+Oh, solo hay que ejecutar la solución, igual que seguir un mapa del tesoro en Minecraft, primero piensas la ruta, luego caminas hasta encontrarlo.
+
+17
+00:02:26,960 --> 00:02:29,120
+Muy bien, hasta aquí la teoría.
+
+18
+00:02:29,280 --> 00:02:31,920
+Ahora vamos a ver cómo se aplica todo esto en la práctica.
+
+19
+00:02:32,280 --> 00:02:39,840
+¡Síganme los buenos! Ay, por aqui, por aqui.
+
+20
+00:02:43,040 --> 00:02:44,960
+¿Qué es eso?
+
+21
+00:02:50,560 --> 00:02:54,120
+Un problema en IA empieza con un estado inicial y un objetivo.
+
+22
+00:02:54,120 --> 00:02:58,840
+Por ejemplo, estamos aquí en la entrada del laberinto y queremos llegar a la salida.
+
+23
+00:02:59,040 --> 00:03:03,920
+El espacio de búsqueda serían todos los caminos posibles dentro del laberinto, ¿verdad?
+
+24
+00:03:04,400 --> 00:03:05,960
+Exacto, como un grafo.
+
+25
+00:03:05,960 --> 00:03:11,080
+Los nodos son las intersecciones del laberinto y los arcos son los pasillos que podemos tomar.
+
+26
+00:03:11,200 --> 00:03:14,000
+Y, ¿cómo se supone que saber cuál es el mejor camino?
+
+27
+00:03:14,080 --> 00:03:16,000
+¿Debo adivinarlo psíquicamente o cómo?
+
+28
+00:03:16,160 --> 00:03:23,960
+Aquí entra algo importante, los tumanos usamos el sentido común y pensamos en varias estrategias alternas para resolver problemas.
+
+29
+00:03:24,079 --> 00:03:31,480
+Podemos decidir si ir siempre a la derecha, probar todos los caminos posibles o marcar con antorchas los que ya recorrimos.
+
+30
+00:03:31,600 --> 00:03:36,960
+Dependiendo de las características del espacio de estados, escogemos el curso de acción que más nos convenga.
+
+31
+00:03:37,840 --> 00:03:46,800
+entendí, o sea que la IA también tiene que elegir entre varias rutas, igual que nosotros cuando transbordamos por las líneas del metro.
+
+32
+00:03:47,360 --> 00:03:51,200
+También es correcto, para eso prácticamente existen los algoritmos de búsqueda.
+
+33
+00:03:51,760 --> 00:03:57,440
+Y para evaluar qué tan buenos son, usamos tres medidas principales: completitud, optimización,
+
+34
+00:03:57,660 --> 00:03:58,620
+y complejidad.
+
+35
+00:03:59,020 --> 00:04:09,300
+Oh, oh, es como cuando hago un camino por el end, puedo hacerlo recto, o sea, que es muy óptimo, o dar vueltas y gastar muchos bloques, o sea, algo que no es óptimo.
+
+36
+00:04:09,420 --> 00:04:16,260
+Y la complejidad sería como medir cuántos recursos gastamos, antorchas, comida, herramientas.
+
+37
+00:04:17,980 --> 00:04:23,180
+Ah, entonces, ¿para qué tanto relajo si solo se trata de saber cómo llegar además de cómo llegamos?
+
+38
+00:04:23,340 --> 00:04:26,700
+Veamos un ejemplo clásico, el rompecabezas numérico.
+
+39
+00:04:27,380 --> 00:04:30,660
+En Minecraft lo simulamos con bloques de colores que debemos ordenar.
+
+40
+00:04:32,500 --> 00:04:37,180
+La parte inicial es la configuración desordenada, el objetivo es tenerlos en orden.
+
+41
+00:04:37,460 --> 00:04:44,659
+La función sucesor son los movimientos del espacio vacío, arriba, abajo, izquierda y derecha.
+
+42
+00:04:46,140 --> 00:04:53,300
+Básicamente es como deslizar bloques, entonces cada movimiento es una acción que nos acerca o nos aleja a la solución.
+
+43
+00:04:55,540 --> 00:05:00,380
+¿Y cuántas combinaciones posibles se supone que hay ya curso de probabilidad como para estarlas averiguando?
+
+44
+00:05:01,180 --> 00:05:02,380
+Muchísimas.
+
+45
+00:05:02,780 --> 00:05:06,620
+Para ocho piezas hay más de 360 mil combinaciones.
+
+46
+00:05:06,780 --> 00:05:07,580
+¿Para quince?
+
+47
+00:05:07,740 --> 00:05:09,020
+Más de dos billones.
+
+48
+00:05:09,180 --> 00:05:11,820
+Por eso necesitamos algoritmos eficientes.
+
+49
+00:05:12,700 --> 00:05:15,420
+Este problema ilustra la necesidad de algoritmos de búsqueda.
+
+50
+00:05:15,660 --> 00:05:19,500
+El espacio de estados es enorme y no podemos probar todo al azar.
+
+51
+00:05:20,580 --> 00:05:26,260
+La búsqueda en anchura (BFS) explora primero todos los caminos cercanos al inicio, antes de seguir más lejos.
+
+52
+00:05:26,260 --> 00:05:36,620
+Mírenlo con este laberinto, empezamos aquí y vamos expandiendo por niveles, primero las casillas más cercanas, luego las siguientes hasta encontrar la salida.
+
+53
+00:05:36,620 --> 00:05:42,980
+Como explorar por capas, eso asegura que encontramos la salida más corta, aunque gasta mucha memoria.
+
+54
+00:05:42,980 --> 00:05:49,420
+O sea, es como cuando ilumino con antorchas cada pasillo y no avanzo profundo sin revisar los lados primero.
+
+55
+00:05:50,220 --> 00:05:54,780
+Es completa y óptima si el costo es uniforme, pero su complejidad es exponencial O(bᵈ)
+
+56
+00:05:55,340 --> 00:05:58,820
+Donde b es el factor de ramificación y d la profundidad.
+
+57
+00:05:59,340 --> 00:06:03,940
+La búsqueda en profundidad (DFS) se lanza por un camino hasta el final antes de retroceder.
+
+58
+00:06:03,940 --> 00:06:10,580
+¡Exacto! Miren, para hallar la salida, tomamos el primer pasillo que vemos y lo seguimos hasta topar con una pared.
+
+59
+00:06:10,820 --> 00:06:15,620
+Si no hay nada, volvemos a la última esquina donde había otro camino y lo intentamos.
+
+60
+00:06:15,620 --> 00:06:15,940
+¡Eso!
+
+61
+00:06:16,020 --> 00:06:19,780
+usa menos memoria porque solo recordamos un camino a la vez, pero...
+
+62
+00:06:19,900 --> 00:06:22,140
+¿y si el laberinto tiene un circuito?
+
+63
+00:06:22,380 --> 00:06:26,140
+Podríamos quedarnos dando vueltas en el mismo ciclo para siempre.
+
+64
+00:06:26,220 --> 00:06:31,980
+Entonces, BFS es más seguro pero pesado, y DFS es más ligero pero arriesgado.
+
+65
+00:06:32,460 --> 00:06:36,540
+DFS no es completa si hay ciclos infinitos, y no garantiza optimalidad.
+
+66
+00:06:37,180 --> 00:06:39,900
+Su complejidad temporal también es O(bd)
+
+67
+00:06:40,540 --> 00:06:43,740
+pero la espacial es lineal, O (m)
+
+68
+00:06:44,140 --> 00:06:47,500
+Donde M es la profundidad máxima del laberinto.
+
+69
+00:06:48,300 --> 00:06:58,620
+Estos algoritmos no sólo se usan para laberintos, se usan también para búsqueda de rutas, viajes en línea aérea, navegación de robots, juegos y hasta en las búsquedas en internet.
+
+70
+00:06:59,740 --> 00:07:03,740
+En Minecraft podemos usarlos para planear construcciones con redstone.
+
+71
+00:07:04,380 --> 00:07:09,580
+distribuir componentes en una placa de circuito o incluso para que los mobs se encuentren en caminos.
+
+72
+00:07:09,580 --> 00:07:14,420
+O para resolver el problema del viajero, visitar todas las aldeas con el menor costo.
+
+73
+00:07:14,420 --> 00:07:15,100
+¿En serio?
+
+74
+00:07:15,100 --> 00:07:15,820
+¿Hasta eso?
+
+75
+00:07:16,740 --> 00:07:22,460
+Sí, la IA está en todas partes y entender estos conceptos nos ayuda a diseñar sistemas más inteligentes.
+
+76
+00:07:24,220 --> 00:07:29,060
+Hoy aprendimos cómo funcionan los algoritmos de búsqueda en IA, usando ejemplos de Minecraft.
+
+77
+00:07:29,260 --> 00:07:33,100
+Explorar mundos, resolver laberintos, encontrar diamantes.
+
+78
+00:07:33,340 --> 00:07:35,100
+Todo tiene que ver con la búsqueda.
+
+79
+00:07:35,580 --> 00:07:38,780
+Hasta el end se puede entender con inteligencia artificial, al parecer.
+
+80
+00:07:39,020 --> 00:07:44,860
+¡Fin del viaje! Y lo más importante, ahora sabemos que la IA busca soluciones como nosotros buscamos aventuras.
+
