@@ -4,7 +4,7 @@
       <td style="border: none; vertical-align: middle;"><img src="https://www.escom.ipn.mx/x/ee2021/images/galeriaEE2021/escudo_ESCOM.png" width="200" alt="Logo"></td>
       <td style="border: none; vertical-align: middle; text-align: left;">
         <h1>Anteligencia Artificial</h1>
-        <p>Prácticas y material de la materia de Anteligencia Artificial</p>
+        <p>Prácticas y material de la materia de Anteligencia Artificial.</p>
         <p><em>Profra. Vanessa Alejandra Camacho Vázquez</em></p>
       </td>
     </tr>
